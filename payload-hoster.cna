@@ -9,7 +9,7 @@ $counter = 0;
 
 foreach $index => $value (@files)
 {
-	println("This is a test, $value");
+	println("Hosting File: , $value");
 	$filename = getFileName($value);
 	$handle = openf($value);
 	$data = readb($handle, -1);
