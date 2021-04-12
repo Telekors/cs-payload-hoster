@@ -1,0 +1,18 @@
+$hostname = "<DOMAIN GOES HERE>"
+
+on ready {
+	println("Connected and ready to rock!");
+}
+
+@files = ls('payloads/');
+$counter = 0;
+
+foreach $index => $value (@files)
+{
+	println("This is a test, $value");
+	$filename = getFileName($value);
+	$handle = openf($value);
+	$data = readb($handle, -1);
+	site_host("$hostname", 443, "/$filename", $data, "automatic", "Hosting File: $value", true);
+	closef($handle);
+}
