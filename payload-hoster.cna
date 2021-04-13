@@ -1,4 +1,4 @@
-$hostname = "<DOMAIN GOES HERE>"
+$hostname = "<DOMAIN GOES HERE>";
 
 on ready {
 	println("Connected and ready to rock!");
